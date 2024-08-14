@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="font-sans">
+    <div class="bg-gray-100">
+      <!-- Header -->
+      <header class="md:container flex justify-between p-4  md:space-y-0">
+        <!-- logo section -->
+        <div class="flex items-center space-x-2">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALFSURBVHgB7VhbdtowEL2S8916B4UVlB0UdhAg/S5qF0B2ENhBu4HK+S9xdhB3BaE7YAd1F2BNRzI+DeCHgvEJPSf3J7ZH0tzMaOZKAGcOgWOg4wFgBv4TKAWCDdR4jWfCn6COQwnM2dk1v4U4Dht2mRhgyWQ3PhP8COp4KEFxC2L72BgIxSSTpoHNBHNyD+gATHLURLKeoI57W3I9dIPU4E8fSqVVA2TdbEnZAt2RswileXNdN6CWIIT8gK4hxbzWXGlxraQ+egSsDUjxw22J9Zu1kavcWoRbX6W4qDIEWdajoD7ABDGGmnBFIhJ69U5ADPPvlJCautSRju8F6HfdOoExg4z/2TJbNYNAeLSUNG0e0641XaAFJN4+Gr1aSsj3HKth8d1GUuhYG5if3AXmaIFWBBnchoR2u/EANGPbDC1RmeIMct20wU9RJHa/ZlJWjvFQktWMU3YjSiqalaBfaCoXycNekYzy+VbDD4uEiacEw3J3dY8a/EsxS5qAYSLClnxonUgSUaYmEVdiwpX4iIMNf1yR2KiSk7mrTaXfzxOXFRdBqeMbnrYoX18sjBovoX9ccjHEe0ZuMVQUyZ4iiCgvEteId/qcIczABHz8ioBTSG6jV6MQ9adpPBYuemrS9/Urucl+algTNgXuL+EXWkIYus2d+/mVPhHZ7g8IgWefiA/Xyqva169tM52rQQuEkqumdVS6Ql7RMEucKYjbjYT6mPDjGZJkTrYV2UejpgvPs1vnINdbs5HlZN93pE5+v4v4S2n5GzU57g5dAanvqNzCDV6NVfHmf5phTWWal2gNvsQ36O9TeBPk8GnuSycgyKquV4nvaOk7kJc9AbliLX+59Cb4Ungl2BavBNtih6AR4utLqgm5H5OwI7uV6rB/4u1SSfgQq7Iv06h0HM4cZ0+wUur44p7YxKIjuAt/AWl9/af4C1uNLNPpgQ3YAAAAAElFTkSuQmCC" alt="" />
+          <a href="#" class="text-[26px] font-semibold text-gray-800">Comforty</a>
+        </div>
+        <!-- Secrch section -->
+        <div class="md:flex md:items-center md:max-w-md md:mx-4 md:relative invisible md:visible">
+          <input
+            type="text"
+            placeholder="Secrch here..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+          />
+
+          <div class="absolute right-0 p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11 19a8 8 0 100-16 8 8 0 000 16zm6.414-3.586l4.95 4.95"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- icon secrion -->
+        <div class="flex items-center space-x-4">
+          <!-- Cart -->
+          <div class="flex space-x-2 p-2 bg-white rounded-md">
+            <a href="3"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII=" alt="Crat" /></a>
+            <span>Cart</span>
+            <span class="text-white bg-teal-600 rounded-full space-x-2 px-2"
+              >2</span
+            >
+          </div>
+          <!-- Wishlist -->
+          <div class="p-2 bg-white rounded-md">
+            <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH/SURBVHgB3VRLUttAEO1plStbH2EK45hdxA0knFRlh3OCkBv4BuAbmBskJwjZpSpQ1g1QdiY2leEG3oKZad4MlkHC5qMdPJcsqdXz+jNvmui1QVUNW/qztjzvM9EuvmqYZrhyIfrOyl6IRPt4j3E1RVROSnK2jcHY/DZrid+3ul9hGBIJfuqIRC5wbzIJgigdnISMI/qlSGZKqQ+w9G7NtPfv/OTHA+KtzSRBNiMRya+cS43JZqVKWjt7orh5Nj0elitMtGP+iSCxUjYdT7OsRNzZ6P5HWXRp3XaV9ClonTTfMZ+iKnN2fpJ6G/u/dvtT7PuJsg9eSuqxWHOIK2nrJF4SR86GF7H2L9WEcu4oPER8R+wk7D5NTJZTTYxNZkKABVcgZkXBiF5pqonQTkAWXIHYchQyxQb0qCaKdpJ1+ZJ4MvmTe5lhV3epJnBYcHDEFO3k4gPaEXa1s7HTpxfCa7xQVWErnbxOqzvCLVa2sV09omtJMQIkmp/iMS80XMo4RLH2G2qawXHkFzyLlOdIBsfbr73P9dA5gTOP0G8EaqTrMl+SQl/KurSQ28qMPbwDxJ4ic/Il+sFU9YGtF8pfQ7oy4xWZa4hzeOmuB94OSe7D1vcqYue+rCJ9lHgZYPPjAUj8DDZ+Ni5m9CE26lH1PElcyd5gPA7G0+OM3hxuAKoD9DzYJ6oTAAAAAElFTkSuQmCC" alt="wish" /></a>
+          </div>
+          <div class="p-2 bg-white rounded-md">
+            <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHrSURBVHgBxVVfMjtBEO6e3V/9vNkjDAnZ8iJOYAlV3nCCcAJuIG7ACcQJ8OZF2dwgXhRSyhxhvVF2pnXnT4mKWZIHumr2z3zd38x2f9ML8NcW60TL+Kk/fudQma3tsVeDH6P+lCGAxsPj1WlRnCoC50u1EyY9YqJzBNrl+zaPFu+m2cUmsbi0ulMp1ahSXtsfwcprDcGYvA7jGgdey5gUL0gFVYmo5YfdDV/1+MSEGQFGflhFQJSNTUzkWgqhrnUyQh7rDY0Ey4TYHptYETWYHv4HwYkQDeZlIafyM0CKlLWHvvhCHXPVt1hmLKtuSlIijBBJy4KBciu3nbQ9EbGYnDZSwSZ7bvFrhog3L3l+ZEyawV+Yd8dxOUnIBYsOYAYRpocxInjm4jy5wLY6nnSMEC/MrVetdVycgUZZUiy9z1EUwYcUDdp/K3fm0niJpfqk3q45UIDDF+vOfbnsdrpAJbz7A0CMXq2dGfYNh51d8FZlQu2sW+oYf8XF7kxqoNeMMo45mwqhyu/pAP+kY4W9T1Yq/HlzIVz8anokx3Gp1uTWKMTGEVxIkVi7z4DO9IiUZj1PS1EZ2+zX4vj+8Wq/kLhHvrrDWa5LIwJvv5A+gW3eRPOrpv/tAZEjPCV/jzDU3Yk8N3Lr5/j37R2DKMKai1k+vAAAAABJRU5ErkJggg==" alt="Profile" /></a>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-- navber section -->
+    <div class="container flex items-center justify-between flex-row ">
+      <nav class="flex items-center space-x-4 p-4 md:flex-row ">
+        <div class="bg-white shadow-md flex p-3">
+          <span><i class="fa-solid fa-bars"></i>All Categories</span>
+        </div>
+        <ul class="flex space-x-4  md:visible invisible">
+          <li><a href="#" class="text-[#007580]">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">pages</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+      <p class="text-gray-500">
+        Contact: <span class="text-black">(808) 555-0111</span>
+      </p>
+    </div>
+    <!-- Main section -->
+    <main class="bg-gray-100 mx-10 rounded-b-lg">
+      <div class="container flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+        <!-- left side -->
+        <div class="">
+          <span class="text-sm">Welcome to chairy</span>
+          <h1 class="text-4xl font-bold text-gray-800">
+            Best Furniture <br />Collection for your <br />interior.
+          </h1>
+          <button
+            class="flex items-center gap-2 bg-[#029FAE] text-sm text-white p-3 rounded-md mt-3 hover:translate-y-1 hover:scale-110 hover:bg-teal-600 transition-all duration-300"
+          >
+            Shop Now <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAYAAABvEu28AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABUSURBVHgB1c+xDUAhCEXR938cwFEcxU0cQUfWCRCihYWN0OhpIBQ3AThERAFWEqEhw4oj5Y2Y4yXxjNCTYPt5+aBX5/TQkpfmawVaV0WCObLGdvcORCpmlR+F+XoAAAAASUVORK5CYII=" alt="" />
+          </button>
+        </div>
+        <!-- Right bar -->
+        <div class="relative mt-3 md:items-center">
+          <img
+            src="/assets/Product%20Image-CabKCG-Q.png"
+            alt="Product"
+            class="md:max-w-[475px] md:max-h-[635px]"
+          />
+          <div
+            class="absolute top-2 right-2 text-red-500 text-3xl font-bold bg-white shadow-md p-4 rounded-3xl"
+          >
+            50% <br /><span class="text-[#272343] text-sm tracking-wider"
+              >Discoun</span
+            >
+          </div>
+        </div>
+        <!-- arrow section -->
+        <span class="p-4 bg-white rounded-full"
+          ><i class="fa-regular fa-arrow-right"></i
+        ></span>
+      </div>
+    </main>
+    <!-- Benefit section -->
+    <div class="container -mt-2 ">
+      <div
+        class="flex flex-col container md:flex-row items-center justify-between gap-8 shadow-md bg-white p-4 "
+      >
+        <!-- Discount -->
+        <div class="flex space-x-2">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC4AAAAuCAYAAABXuSs3AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAASGSURBVHgBzZrNVttGFMfvSISy6YlLT9aVIQe8K29QA110V/cJME9Q9wkwTxD8BLGfoM6ui8aIN4CdzQGs7Gmj7JIQzeR/ZQvESLI+LAffc7A00mj0u3fu3LkzQtACpLa511QkDnBqKaL25fXbHpUsgkoUH1iJI7RqoWgD+h1ewAo4ZSswN7hl1SurhvGnEKKFYgWAXcPzjoeO7fD9mlW3pGm2y1agMPhjYEVSiZ4pvZMAWJeyFcgNrgOjiUoekIgCSnUNudobOv84lEMyg+vAQhidj1++nKzBPYpYkhVQptkipX5HY5RXgVRw3YdxPGZgx7FdHaSoArSy0lRSHkABazJGnh2nKSCSG/zN8oy7liEYxHcJGz+NNKg4BQBylgbCBlozjYZSdJRFAREHLM276YuVG7gEWziPf87jy5OwOluBe/Day3pdKfMIp3UAw1JiplWz+qfmCtx3dhZXSFNA3Fcg8RqnLiq0soapPP5Z1Jcf+OgVRzAcm8xn8o31H6oNGGOHb0CTnR/XN9z/3o8v0hq8dR339v8b+/vnP/WeGWIEczbJkG08b714vn1x6165el2023mxXn03q24UmtMHUfMvKHWBNmzjoYo4F55XhUZngO9ub+6Ptzb3DyiDsP8Prwfd0c2gCmc4FErVlXnHz7/mMaPXz1KXgbc39seBJyCa7eJo39Pyz9bGXhs3fhldv931HyphlssywOLqotgnf5xF0wcY8xTj6ezyZtA24hriigBtxvVAnAVj28jRAx892WfIaRFuKzr8bjAcJqUQsRaPWKSEaVqzqi2Eh4mMzrX04Rw/dXDEzi+pFtcl3AN4SQ+tNmHB0yQLxrYx7QHg/cFlhN7T70xzjKDQYgt/8iT3TmZ3zAQeVmB49W9bSLnrK5DiArrw7AhfP+eeVUgdcKnCwNymnkKkyQoVkKnftfmPXQC9fIT04APKrbj64fRB0d0ZLjUMJXmSo7zAc4GHhV2AHgYWwfp8rjiKcJnTB8AeGJiNg/SBSpC5wWOkDxd6BRdqckFM0gfMdoNS152lg2MQcxzuw/J/YxCL0fWgQQuQRVh8IlJ+UIZQeR5RwvgZ4SZT3cWBZ5RHCxWleBnYyfLck4NzLJ8stmnmYluXJwOXJFxxv1DxTr5JHC9DgkFMBSUyc9Ze/lrPms4+pUTA4W07efPxp5AI+OhqcFJ0QfEtJeoqfrK0RnH5OLsRLYlEwKX41A4yvrACCFdv5CTOLoVEosrl+LSJjM/mjI/zje2Nvb+GNwNOjFq0RBK/dAstu0xT2rSE8mDxGDeYpqxLKb7FkeA7WAvuLGsE8bcqsN4kXv0LMeZrPjhbdhlDoLa3Qry3EmyTxGx6lvPlYKu620VXKiwgDvM8l/ZpJpAZ28xRBT573pusyVBe8LyfZlI39ovuqWQFT/rSkWagVPCwAuHtYlikb8qVTpICaeBFgXODJyiQuC+YBD4vcGHwR0rM2NjUwfVPM0WBSwGfpQDnPAxueKvHSZ9maA4pBTwQbWMzAKukfZopIqWCBxJSgMNodxH/hPAV4nfFl6QtfvQAAAAASUVORK5CYII=" alt="Box" />
+          <span class="space-y-2">
+            <h2 class="size-4">Discount</h2>
+            <p class="text-gray-400">Every week new sales</p>
+          </span>
+        </div>
+        <!-- Delivery -->
+        <div class="flex space-x-2">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAnCAYAAAC/mE48AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUvSURBVHgB3VpdUuNGEO4eeUPe4j1BxE+AykucGwjYVOUt5gQLJwg+gc0J2D0B5ATAW6rCj3KCkDfDAqsbrB9DFqn3m7HGCCGQhC2j2q8KpJFGo57WdH/dPWbX9ZozynkrJK+pTmD+eHF1/AdVDF6aX9vHsU31hH9+dbxCFaJBw8kPmKRDNYIQ7eD7tKhiNOLjoH91skc1wtLcWpeYXKoYDao5FudWe7mdmM/gLw7oGai9Api5W6Tf4tybs4vro5+pJOqvAJLNvD4i1GWm1tLc6tb59ck7KoFKFbC84HmRON+PQ2dFfNPywptARE6xXH5Dsz4KEFH7TNQE1bY5fNXpB38GVBJFfEAURZg7DbBePMQ1bhD4ARVEtQog3mSRHUjXFudze3F+bU+Fr7bLKKKoD7D4RqkNHHpF+yuqENozwyZnjR2LBFgNG1DEqbbVomPoZ7P+iEdxyyDZhsLeUgnoSBAxBwWIuGazOhg7jpRH44LZhQKSwgV4cecx+kIc8FHHAZCLHxsSsp/i4DGHK/1L30+3qQByTcDYMXOTJg+tEER79Cz+NhA5hGK9MHJ0NOs/aBdArgKY1TpJ5NKYEOHvcNi6i+5gEqxyKe4p3ETR3oyjumq47LeSbTjDHpzhIG+MXAX0L498GhPw5Jqntd1jJcmAWG2fXx6Xoqss6Ali2Z/h1NOmGpuBaX/bIJ1H+HljVB4HSOTsJmL69zdhhC9zkvtlLArQoBkriho76Hto2yJOF6vgLG8VVEuDd5P3OQw3+yX42aIoDTJLK5U9ejOO8wkr4gDO9uD/MDzMUkalCmDFxsbHMaMioXAWEBp5eBaRIbfhbNtQBmUpI5cGXwpFaLAIEHxpRmjHyhixGSa9B0V0ap8MjYs4zjBUm1QGE2/MqMbgq1dAElYZy8gXxFH/YIVtVBoK1xXGGQtrH9C0K6C5PL+6QTUCqtRN7QInIleogn4wdMQ//vBLK4rClh1/pABkbrtUQ0xELkf01zZl/1uRXU7Q5agoioLCe6oREDn+rr025NqmMaGU8u258O0mRaptx//qaTBv/NIsoMNbEuWaBkdB0bRzWigrX2EF2LgeBUh3dFFMdIWsDmHuCysirlvsIOu8C4dj+bDEe8m65LL7qyv82dUZaSEaRMm5i+Ti1Mb12i5j2/Tx5+p7CDJKVWImCf1uLQPyhlaWfLChPVuFMopSt/vDJ/nQ+oAnt8asJ8YLVtJx/dICBhbeoQlvr8VbY81CZXEy7zd901VkTaN2LBoqxItv+TdhuM62jJT3Esy+c3559M4OimRjYMtZWCE9ZGOlipeTBt6/3b886enzxXkPIa9D2fIJTIJHJmE8rJmQZO/D2XQU2nptChBzq7rKa5aTXmYX1yc9s8WO1JNegE5HdBaGszrCS8oHHIBF1hPyPWC7XIpJ02TctkhfnzqdpunStu399PU0reY7QaEA/12txfiKn7irKzDGqw77SuFKz6QgysT0NJKPhzKZe3B+o45DpTyQL1cBItHf+ogNB7Os9A8WbG0e5+YavKphAMEuLU0ZHIVp+baG+xC0pfN9fc3mE5JRgc41Aey7eWbfDdqLlFr58OGve5PUFMSxpq0d0hQxSm21lxfppDdHTfwijqa9ZpZ8hcJMKKEHJVgvfwBV+vHTusDgDc/vWGLaSFAxPSZfkiWSKBxnGz7FNrTe4bl/x9BK57k/UJgUdLUn3od079+xZfjsj1M60dAmgd1YFBz5E4qe/05i32CSMCYbyU/6XMv33+3tk6XxL+DxvF2DBOylAAAAAElFTkSuQmCC" alt="Delivery" />
+          <span class="space-y-2">
+            <h2 class="">Free Delivery</h2>
+            <p class="text-gray-400">100% Free for all orders</p>
+          </span>
+        </div>
+        <!-- Support -->
+        <div class="flex space-x-2">
+          <img src="data:image/png;base64,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" alt="Spupport" />
+          <span class="space-y-2">
+            <h2 class="">Great Support 24/7</h2>
+            <p class="text-gray-400">We care your experiences</p>
+          </span>
+        </div>
+        <!-- Payment -->
+        <div class="flex space-x-2">
+          <img src="data:image/png;base64,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" alt="Box" />
+          <span class="space-y-2">
+            <h2 class="">Secure Payment</h2>
+            <p class="text-gray-400">100% Secure Payment Method</p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Company  -->
+    <div class="">
+      <div class="container flex flex-col md:flex-row justify-between items-center my-10">
+        <img src="/assets/Logo%20(1)-C3Ab6lm5.svg" alt="" />
+        <img src="/assets/Logo%20(2)-DBNXT-yr.svg" alt="" />
+        <img src="/assets/Logo%20(3)-ClHdPokr.svg" alt="" />
+        <img src="/assets/Logo%20(4)-BoRmb0Cc.svg" alt="" />
+        <img src="/assets/Logo%20(5)-DhDcp7O7.svg" alt="" />
+        <img src="/assets/Logo%20(6)-CWhSoII8.svg" alt="" />
+        <img src="/assets/Logo-CqMfQCuP.svg" alt="" />
+      </div>
+    </div>
+    <!-- Featured Products section -->
+    <!-- Featured Products titel -->
+    <div class="container flex justify-between items-center">
+      <h1 class="heading">Featured Products</h1>
+      <div class="flex gap-4">
+        <span
+          ><img
+            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='24'%20height='24'%20transform='matrix(-1%200%200%201%2024%200)'%20fill='%23007580'/%3e%3cpath%20d='M8.5%207.5L4%2012M4%2012L8.5%2016.5M4%2012H20'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+            alt=""
+            class="p-4 bg-teal-700 rounded-full"
+        /></span>
+        <span
+          ><img
+            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.5%207.5L20%2012M20%2012L15.5%2016.5M20%2012H4'%20stroke='%23272343'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+            alt=""
+            class="p-4 rounded-full bg-slate-200"
+        /></span>
+      </div>
+    </div>
+    <!-- Featured product image -->
+    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
+      <!-- image 1 -->
+      <div class="">
+        <div class="relative">
+          <img src="/assets/Image-clFfHOIY.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-green-600 px-2 rounded-md absolute top-3 left-3 "
+            >New</a
+          >
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH/SURBVHgB3VRLUttAEO1plStbH2EK45hdxA0knFRlh3OCkBv4BuAbmBskJwjZpSpQ1g1QdiY2leEG3oKZad4MlkHC5qMdPJcsqdXz+jNvmui1QVUNW/qztjzvM9EuvmqYZrhyIfrOyl6IRPt4j3E1RVROSnK2jcHY/DZrid+3ul9hGBIJfuqIRC5wbzIJgigdnISMI/qlSGZKqQ+w9G7NtPfv/OTHA+KtzSRBNiMRya+cS43JZqVKWjt7orh5Nj0elitMtGP+iSCxUjYdT7OsRNzZ6P5HWXRp3XaV9ClonTTfMZ+iKnN2fpJ6G/u/dvtT7PuJsg9eSuqxWHOIK2nrJF4SR86GF7H2L9WEcu4oPER8R+wk7D5NTJZTTYxNZkKABVcgZkXBiF5pqonQTkAWXIHYchQyxQb0qCaKdpJ1+ZJ4MvmTe5lhV3epJnBYcHDEFO3k4gPaEXa1s7HTpxfCa7xQVWErnbxOqzvCLVa2sV09omtJMQIkmp/iMS80XMo4RLH2G2qawXHkFzyLlOdIBsfbr73P9dA5gTOP0G8EaqTrMl+SQl/KurSQ28qMPbwDxJ4ic/Il+sFU9YGtF8pfQ7oy4xWZa4hzeOmuB94OSe7D1vcqYue+rCJ9lHgZYPPjAUj8DDZ+Ni5m9CE26lH1PElcyd5gPA7G0+OM3hxuAKoD9DzYJ6oTAAAAAElFTkSuQmCC"
+              alt="wish"
+              class="absolute p-3 bg-white rounded-md top-3 right-12"
+          /></a>
+        </div>
+
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="text-[#007580]">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-3 bg-teal-700 text-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- Image 2 -->
+      <div>
+        <div class="relative">
+          <img src="/assets/Image%20(1)-BBgs0T6f.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-[#F5813F] px-2 rounded-md absolute top-3 right-12"
+            >Sales</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 3 -->
+      <div>
+        <img src="/assets/Image%20(3)-JVNR04o4.svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 4 -->
+      <div>
+        <img src="/assets/Image%20(2)-wNLe5o6R.svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- Top categories section -->
+    <!-- Top categories titel -->
+    <div class="container flex justify-between items-center">
+      <h1 class="heading">Top categories</h1>
+      <div class="flex gap-4">
+        <span
+          ><img
+            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='24'%20height='24'%20transform='matrix(-1%200%200%201%2024%200)'%20fill='%23007580'/%3e%3cpath%20d='M8.5%207.5L4%2012M4%2012L8.5%2016.5M4%2012H20'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+            alt=""
+            class="p-4 bg-teal-700 rounded-full"
+        /></span>
+        <span
+          ><img
+            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.5%207.5L20%2012M20%2012L15.5%2016.5M20%2012H4'%20stroke='%23272343'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+            alt=""
+            class="p-4 rounded-full bg-slate-200"
+        /></span>
+      </div>
+    </div>
+    <!-- Top categories image-->
+
+    <div class="container grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="relative">
+        <img src="/assets/Image%20(4)-CH23AegJ.svg" alt="" />
+        <span class="absolute bg-gray-400 bottom-0 w-full rounded-b-md">
+          <h1 class="text-white ml-2 mb-2">Wing Chair</h1>
+          <p class="text-sm ml-2 mb-2">3,584 Products</p>
+        </span>
+      </div>
+      <div class="relative">
+        <img src="/assets/Image%20(5)-DmD0_kHw.svg" alt="" />
+        <span class="absolute bg-gray-400 bottom-0 w-full rounded-b-md">
+          <h1 class="text-white ml-2 mb-2">Wooden Chair</h1>
+          <p class="text-sm ml-2 mb-2">157 Products</p>
+        </span>
+      </div>
+      <div class="relative">
+        <img src="/assets/Image%20(6)-DQ76mbLs.svg" alt="" />
+        <span class="absolute bg-gray-400 bottom-0 w-full rounded-b-md">
+          <h1 class="text-white ml-2 mb-2">Desk Chair</h1>
+          <p class="text-sm ml-2 mb-2">154 Products</p>
+        </span>
+      </div>
+    </div>
+    <!-- Our Product section -->
+    <!-- Our product titel -->
+    <div class="container my-20 text-center">
+      <h1 class="font-bold my-4 text-3xl text-[#272343]">Our Products</h1>
+      <p>
+        ALL <span class="text-slate-400">NEWEST</span> TRANDING
+        <span class="text-gray-400">BEST SELLERS FELTURED</span>
+      </p>
+    </div>
+    <!-- Our Product img -->
+    <div class="container grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- image 1 -->
+      <div class="">
+        <div class="relative">
+          <img src="/assets/Image-clFfHOIY.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-green-600 px-2 rounded-md absolute top-3 left-3"
+            >New</a
+          >
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH/SURBVHgB3VRLUttAEO1plStbH2EK45hdxA0knFRlh3OCkBv4BuAbmBskJwjZpSpQ1g1QdiY2leEG3oKZad4MlkHC5qMdPJcsqdXz+jNvmui1QVUNW/qztjzvM9EuvmqYZrhyIfrOyl6IRPt4j3E1RVROSnK2jcHY/DZrid+3ul9hGBIJfuqIRC5wbzIJgigdnISMI/qlSGZKqQ+w9G7NtPfv/OTHA+KtzSRBNiMRya+cS43JZqVKWjt7orh5Nj0elitMtGP+iSCxUjYdT7OsRNzZ6P5HWXRp3XaV9ClonTTfMZ+iKnN2fpJ6G/u/dvtT7PuJsg9eSuqxWHOIK2nrJF4SR86GF7H2L9WEcu4oPER8R+wk7D5NTJZTTYxNZkKABVcgZkXBiF5pqonQTkAWXIHYchQyxQb0qCaKdpJ1+ZJ4MvmTe5lhV3epJnBYcHDEFO3k4gPaEXa1s7HTpxfCa7xQVWErnbxOqzvCLVa2sV09omtJMQIkmp/iMS80XMo4RLH2G2qawXHkFzyLlOdIBsfbr73P9dA5gTOP0G8EaqTrMl+SQl/KurSQ28qMPbwDxJ4ic/Il+sFU9YGtF8pfQ7oy4xWZa4hzeOmuB94OSe7D1vcqYue+rCJ9lHgZYPPjAUj8DDZ+Ni5m9CE26lH1PElcyd5gPA7G0+OM3hxuAKoD9DzYJ6oTAAAAAElFTkSuQmCC"
+              alt="wish"
+              class="absolute p-2 bg-white rounded-md top-3 right-12"
+          /></a>
+        </div>
+
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="text-[#007580]">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-3 bg-teal-700 text-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- Image 2 -->
+      <div>
+        <div class="relative">
+          <img src="/assets/Image%20(1)-BBgs0T6f.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-[#F5813F] px-2 rounded-md absolute top-3 right-12"
+            >Sales</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 3 -->
+      <div>
+        <img src="/assets/Image%20(3)-JVNR04o4.svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 4 -->
+      <div>
+        <img src="/assets/Image%20(2)-wNLe5o6R.svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div class="container grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- image 5 -->
+      <div>
+        <div class="relative">
+          <img src="/assets/Image%20(9)-DBUIrsYp.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-[#F5813F] px-2 rounded-md absolute top-3 left-3"
+            >Sales</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 6 -->
+      <div>
+        <div class="relative">
+          <img src="/assets/Image%20(10)-F0yZ__U0.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-green-600 px-2 rounded-md absolute top-3 right-12"
+            >New</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 7 -->
+      <div>
+        <div class="relative">
+          <img src="/assets/Image%20(11)-89yMElXQ.svg" alt="" class="" />
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 8 -->
+      <div>
+        <div class="relative">
+          <img src="/assets/Image-clFfHOIY.svg" alt="" class="" />
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- About client -->
+    <div class="bg-gray-100 my-20">
+      <!-- About client title -->
+    <div class="container flex justify-between items-center ">
+      <h1 class="heading">What client says about us</h1>
+      <div class="flex gap-4">
+        <span
+          ><img
+            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='24'%20height='24'%20transform='matrix(-1%200%200%201%2024%200)'%20fill='%23007580'/%3e%3cpath%20d='M8.5%207.5L4%2012M4%2012L8.5%2016.5M4%2012H20'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+            alt=""
+            class="p-4 bg-teal-700 rounded-full"
+        /></span>
+        <span
+          ><img
+            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.5%207.5L20%2012M20%2012L15.5%2016.5M20%2012H4'%20stroke='%23272343'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+            alt=""
+            class="p-4 rounded-full bg-slate-200"
+        /></span>
+      </div>
+    </div>
+    <!-- About client profile -->
+    <div class="">
+      <div class="flex flex-col md:container md:flex md:flex-row md:items-center md:justify-between">
+        <img src="/assets/Testimonial%20Card-VqH73ktZ.svg" alt="About client" />
+        <img src="/assets/Testimonial%20Card%20(1)-BUP_-2su.svg" alt="About client" />
+      </div>
+    </div>
+    </div>
+    <!-- Recently Added -->
+    <!-- Recently Added titel -->
+    <div class="container flex justify-between items-center">
+      <h1 class="heading">Recently Added</h1>
+      <div class="flex gap-4">
+        <span
+          ><img
+            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='24'%20height='24'%20transform='matrix(-1%200%200%201%2024%200)'%20fill='%23007580'/%3e%3cpath%20d='M8.5%207.5L4%2012M4%2012L8.5%2016.5M4%2012H20'%20stroke='white'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+            alt=""
+            class="p-4 bg-teal-700 rounded-full"
+        /></span>
+        <span
+          ><img
+            src="data:image/svg+xml,%3csvg%20width='24'%20height='24'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M15.5%207.5L20%2012M20%2012L15.5%2016.5M20%2012H4'%20stroke='%23272343'%20stroke-width='1.5'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e"
+            alt=""
+            class="p-4 rounded-full bg-slate-200"
+        /></span>
+      </div>
+    </div>
+    <!-- Recently Added image -->
+    <div class="container grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- image 1 -->
+      <div class="">
+        <div class="relative">
+          <img src="/assets/Image-clFfHOIY.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-green-600 px-2 rounded-md absolute top-3 left-3"
+            >New</a
+          >
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAH/SURBVHgB3VRLUttAEO1plStbH2EK45hdxA0knFRlh3OCkBv4BuAbmBskJwjZpSpQ1g1QdiY2leEG3oKZad4MlkHC5qMdPJcsqdXz+jNvmui1QVUNW/qztjzvM9EuvmqYZrhyIfrOyl6IRPt4j3E1RVROSnK2jcHY/DZrid+3ul9hGBIJfuqIRC5wbzIJgigdnISMI/qlSGZKqQ+w9G7NtPfv/OTHA+KtzSRBNiMRya+cS43JZqVKWjt7orh5Nj0elitMtGP+iSCxUjYdT7OsRNzZ6P5HWXRp3XaV9ClonTTfMZ+iKnN2fpJ6G/u/dvtT7PuJsg9eSuqxWHOIK2nrJF4SR86GF7H2L9WEcu4oPER8R+wk7D5NTJZTTYxNZkKABVcgZkXBiF5pqonQTkAWXIHYchQyxQb0qCaKdpJ1+ZJ4MvmTe5lhV3epJnBYcHDEFO3k4gPaEXa1s7HTpxfCa7xQVWErnbxOqzvCLVa2sV09omtJMQIkmp/iMS80XMo4RLH2G2qawXHkFzyLlOdIBsfbr73P9dA5gTOP0G8EaqTrMl+SQl/KurSQ28qMPbwDxJ4ic/Il+sFU9YGtF8pfQ7oy4xWZa4hzeOmuB94OSe7D1vcqYue+rCJ9lHgZYPPjAUj8DDZ+Ni5m9CE26lH1PElcyd5gPA7G0+OM3hxuAKoD9DzYJ6oTAAAAAElFTkSuQmCC"
+              alt="wish"
+              class="absolute p-2 bg-white rounded-md top-3 right-12"
+          /></a>
+        </div>
+
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="text-[#007580]">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-3 bg-teal-700 text-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- Image 2 -->
+      <div>
+        <div class="relative">
+          <img src="/assets/Image%20(1)-BBgs0T6f.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-[#F5813F] px-2 rounded-md absolute top-3 right-12"
+            >Sales</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 3 -->
+      <div>
+        <img src="/assets/Image%20(3)-JVNR04o4.svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 4 -->
+      <div>
+        <img src="/assets/Image%20(2)-wNLe5o6R.svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGwSURBVHgB1ZTLUcMwEIb/lQzkGCpAw9PDBejAPA4coRJKCB0EOgiFBEQFhJuBZHAHmFsGgpZVTDKB2MEmJ74Zv1e/Vv+uDPw3yJ9Cc2xYvzcZSOXRPvbaV5gT5U999L1gncAnMlNrw0S7mJOhcJLY9KHX3idSp9nLYAVzEnx7GgwSaA1W2AvXo1dUJO5aO7qnyQ/GRPUlrV/wd6xf+ZSwZ2vtkKWIV4qohQo4h4iIG+7jY+8psZ1gKoKRgJjjbtuiAuHageGJPKeEWVFKjOUiga3Vg6Ys9CTLgdI3N9j3xXcMQ6Lrs80VBnMihykSlsH3TlrzKxi17D6VDzsyrlOYsZj1CqXqRcJx77oll1bOjAbZBhuicjIabhZUhNgZseO+UNj75oV966EkWSzVFcTGL6asUEpZZm4sat2USt+iBNKfO8OslRt7THmB0ssXcjlDaTgVCy/j7vX5TGGPX16tpNd9KZpvucl3QVHwwgJM/GQ7+IXQRKaGWtZyE6i84M3Vo4Zy+k4sucEMtjeiXdb6Wf7ldz+LrQrGjCxKMQPHwXijlCZcP4rKtJy3okprzs0ndFGYBEK1x64AAAAASUVORK5CYII="
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- footer section -->
+     <div class="container grid grid-cols-1 md:grid-cols-4 gap-4 mt-16">
+      <!-- Frist columm -->
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAALFSURBVHgB7VhbdtowEL2S8916B4UVlB0UdhAg/S5qF0B2ENhBu4HK+S9xdhB3BaE7YAd1F2BNRzI+DeCHgvEJPSf3J7ZH0tzMaOZKAGcOgWOg4wFgBv4TKAWCDdR4jWfCn6COQwnM2dk1v4U4Dht2mRhgyWQ3PhP8COp4KEFxC2L72BgIxSSTpoHNBHNyD+gATHLURLKeoI57W3I9dIPU4E8fSqVVA2TdbEnZAt2RswileXNdN6CWIIT8gK4hxbzWXGlxraQ+egSsDUjxw22J9Zu1kavcWoRbX6W4qDIEWdajoD7ABDGGmnBFIhJ69U5ADPPvlJCautSRju8F6HfdOoExg4z/2TJbNYNAeLSUNG0e0641XaAFJN4+Gr1aSsj3HKth8d1GUuhYG5if3AXmaIFWBBnchoR2u/EANGPbDC1RmeIMct20wU9RJHa/ZlJWjvFQktWMU3YjSiqalaBfaCoXycNekYzy+VbDD4uEiacEw3J3dY8a/EsxS5qAYSLClnxonUgSUaYmEVdiwpX4iIMNf1yR2KiSk7mrTaXfzxOXFRdBqeMbnrYoX18sjBovoX9ccjHEe0ZuMVQUyZ4iiCgvEteId/qcIczABHz8ioBTSG6jV6MQ9adpPBYuemrS9/Urucl+algTNgXuL+EXWkIYus2d+/mVPhHZ7g8IgWefiA/Xyqva169tM52rQQuEkqumdVS6Ql7RMEucKYjbjYT6mPDjGZJkTrYV2UejpgvPs1vnINdbs5HlZN93pE5+v4v4S2n5GzU57g5dAanvqNzCDV6NVfHmf5phTWWal2gNvsQ36O9TeBPk8GnuSycgyKquV4nvaOk7kJc9AbliLX+59Cb4Ungl2BavBNtih6AR4utLqgm5H5OwI7uV6rB/4u1SSfgQq7Iv06h0HM4cZ0+wUur44p7YxKIjuAt/AWl9/af4C1uNLNPpgQ3YAAAAAElFTkSuQmCC" alt="" />
+          <a href="#" class="text-[26px] font-semibold text-gray-800">Comforty</a>
+        </div>
+        <p class="text-gray-400 my-5">Vivamus tristique odio sit amet velit semper, <br>eu posuere turpis interdum. <br>
+          Cras egestas purus </p>
+          <img src="/assets/Social%20Links-NjrcZEpu.svg" alt="">
+      </div>
+      <!-- Second columm -->
+       <div>
+        <h1 class="text-gray-400">Category</h1>
+        <a href="#">Sofa</a><br>
+        <a href="#">Armchair</a><br>
+        <a href="#">Wing Chair</a><br>
+        <a href="#">Desk Chair</a><br>
+        <a href="#">wooden Chair</a><br>
+        <a href="#">Park Bench</a>
+       </div>
+       <!-- thrad columm -->
+        <div>
+          <h1 class="text-gray-400">Support</h1>
+        <a href="#">Help & Support</a><br>
+        <a href="#">Tearms & Conditions</a><br>
+        <a href="#">Privacy Policy</a><br>
+        <a href="#">Help</a><br>
+        </div>
+        <!-- fourth columm -->
+        <div>
+          <h1 class="text-gray-400">Newsletter</h1>
+          <span class="flex space-x-2 my-2">
+            <input type="text" placeholder="Your email" class="w-full max-w-md py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
+          <button class="p-2 text-white bg-teal-500 rounded-md">Subscribe</button>
+          </span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.</p>
+        </div>
+     </div>
+     <!-- end section -->
+      <div class="border p-4 mt-6">
+        <div class="container flex flex-col md:flex-row items-center justify-between">
+          <h1 class="text-gray-400">@ 2021 - Blogy - Designed & Develop by <span class="text-black">Zakirsoft</span></h1>
+          <img src="/assets/Group%2013-DarKpQaS.svg" alt="Payment" class="opacity-50">
+     </div>
+      </div>
+  </body>
+</html>

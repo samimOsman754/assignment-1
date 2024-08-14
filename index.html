@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="font-sans">
+    <div class="bg-gray-100">
+      <!-- Header -->
+      <header class="md:container flex justify-between p-4  md:space-y-0">
+        <!-- logo section -->
+        <div class="flex items-center space-x-2">
+          <img src="img/logo/Logo Icon (1).png" alt="" />
+          <a href="#" class="text-[26px] font-semibold text-gray-800">Comforty</a>
+        </div>
+        <!-- Secrch section -->
+        <div class="md:flex md:items-center md:max-w-md md:mx-4 md:relative invisible md:visible">
+          <input
+            type="text"
+            placeholder="Secrch here..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500"
+          />
+
+          <div class="absolute right-0 p-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M11 19a8 8 0 100-16 8 8 0 000 16zm6.414-3.586l4.95 4.95"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- icon secrion -->
+        <div class="flex items-center space-x-4">
+          <!-- Cart -->
+          <div class="flex space-x-2 p-2 bg-white rounded-md">
+            <a href="3"><img src="img/icon/Buy 2.png" alt="Crat" /></a>
+            <span>Cart</span>
+            <span class="text-white bg-teal-600 rounded-full space-x-2 px-2"
+              >2</span
+            >
+          </div>
+          <!-- Wishlist -->
+          <div class="p-2 bg-white rounded-md">
+            <a href="#"><img src="img/icon/Heart 1.png" alt="wish" /></a>
+          </div>
+          <div class="p-2 bg-white rounded-md">
+            <a href="#"><img src="img/icon/Profile.png" alt="Profile" /></a>
+          </div>
+        </div>
+      </header>
+    </div>
+    <!-- navber section -->
+    <div class="container flex items-center justify-between flex-row ">
+      <nav class="flex items-center space-x-4 p-4 md:flex-row ">
+        <div class="bg-white shadow-md flex p-3">
+          <span><i class="fa-solid fa-bars"></i>All Categories</span>
+        </div>
+        <ul class="flex space-x-4  md:visible invisible">
+          <li><a href="#" class="text-[#007580]">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Product</a></li>
+          <li><a href="#">pages</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+      <p class="text-gray-500">
+        Contact: <span class="text-black">(808) 555-0111</span>
+      </p>
+    </div>
+    <!-- Main section -->
+    <main class="bg-gray-100 mx-10 rounded-b-lg">
+      <div class="container flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+        <!-- left side -->
+        <div class="">
+          <span class="text-sm">Welcome to chairy</span>
+          <h1 class="text-4xl font-bold text-gray-800">
+            Best Furniture <br />Collection for your <br />interior.
+          </h1>
+          <button
+            class="flex items-center gap-2 bg-[#029FAE] text-sm text-white p-3 rounded-md mt-3 hover:translate-y-1 hover:scale-110 hover:bg-teal-600 transition-all duration-300"
+          >
+            Shop Now <img src="img/icon/Line.png" alt="" />
+          </button>
+        </div>
+        <!-- Right bar -->
+        <div class="relative mt-3 md:items-center">
+          <img
+            src="img/product/Product Image.png"
+            alt="Product"
+            class="md:max-w-[475px] md:max-h-[635px]"
+          />
+          <div
+            class="absolute top-2 right-2 text-red-500 text-3xl font-bold bg-white shadow-md p-4 rounded-3xl"
+          >
+            50% <br /><span class="text-[#272343] text-sm tracking-wider"
+              >Discoun</span
+            >
+          </div>
+        </div>
+        <!-- arrow section -->
+        <span class="p-4 bg-white rounded-full"
+          ><i class="fa-regular fa-arrow-right"></i
+        ></span>
+      </div>
+    </main>
+    <!-- Benefit section -->
+    <div class="container -mt-2 ">
+      <div
+        class="flex flex-col container md:flex-row items-center justify-between gap-8 shadow-md bg-white p-4 "
+      >
+        <!-- Discount -->
+        <div class="flex space-x-2">
+          <img src="img/benefit/box.png" alt="Box" />
+          <span class="space-y-2">
+            <h2 class="size-4">Discount</h2>
+            <p class="text-gray-400">Every week new sales</p>
+          </span>
+        </div>
+        <!-- Delivery -->
+        <div class="flex space-x-2">
+          <img src="img/benefit/delivery-truck.png" alt="Delivery" />
+          <span class="space-y-2">
+            <h2 class="">Free Delivery</h2>
+            <p class="text-gray-400">100% Free for all orders</p>
+          </span>
+        </div>
+        <!-- Support -->
+        <div class="flex space-x-2">
+          <img src="img/benefit/24-hours.png" alt="Spupport" />
+          <span class="space-y-2">
+            <h2 class="">Great Support 24/7</h2>
+            <p class="text-gray-400">We care your experiences</p>
+          </span>
+        </div>
+        <!-- Payment -->
+        <div class="flex space-x-2">
+          <img src="img/benefit/shield.png" alt="Box" />
+          <span class="space-y-2">
+            <h2 class="">Secure Payment</h2>
+            <p class="text-gray-400">100% Secure Payment Method</p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Company  -->
+    <div class="">
+      <div class="container flex flex-col md:flex-row justify-between items-center my-10">
+        <img src="img/company/Logo (1).svg" alt="" />
+        <img src="img/company/Logo (2).svg" alt="" />
+        <img src="img/company/Logo (3).svg" alt="" />
+        <img src="img/company/Logo (4).svg" alt="" />
+        <img src="img/company/Logo (5).svg" alt="" />
+        <img src="img/company/Logo (6).svg" alt="" />
+        <img src="img/company/Logo.svg" alt="" />
+      </div>
+    </div>
+    <!-- Featured Products section -->
+    <!-- Featured Products titel -->
+    <div class="container flex justify-between items-center">
+      <h1 class="heading">Featured Products</h1>
+      <div class="flex gap-4">
+        <span
+          ><img
+            src="img/featured/Right 24px.svg"
+            alt=""
+            class="p-4 bg-teal-700 rounded-full"
+        /></span>
+        <span
+          ><img
+            src="img/featured/Right 24px (1).svg"
+            alt=""
+            class="p-4 rounded-full bg-slate-200"
+        /></span>
+      </div>
+    </div>
+    <!-- Featured product image -->
+    <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 my-4">
+      <!-- image 1 -->
+      <div class="">
+        <div class="relative">
+          <img src="img/featured/Image.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-green-600 px-2 rounded-md absolute top-3 left-3 "
+            >New</a
+          >
+          <a href="#"
+            ><img
+              src="img/icon/Heart 1.png"
+              alt="wish"
+              class="absolute p-3 bg-white rounded-md top-3 right-12"
+          /></a>
+        </div>
+
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="text-[#007580]">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-3 bg-teal-700 text-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- Image 2 -->
+      <div>
+        <div class="relative">
+          <img src="img/featured/Image (1).svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-[#F5813F] px-2 rounded-md absolute top-3 right-12"
+            >Sales</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 3 -->
+      <div>
+        <img src="img/featured/Image (3).svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 4 -->
+      <div>
+        <img src="img/featured/Image (2).svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- Top categories section -->
+    <!-- Top categories titel -->
+    <div class="container flex justify-between items-center">
+      <h1 class="heading">Top categories</h1>
+      <div class="flex gap-4">
+        <span
+          ><img
+            src="img/featured/Right 24px.svg"
+            alt=""
+            class="p-4 bg-teal-700 rounded-full"
+        /></span>
+        <span
+          ><img
+            src="img/featured/Right 24px (1).svg"
+            alt=""
+            class="p-4 rounded-full bg-slate-200"
+        /></span>
+      </div>
+    </div>
+    <!-- Top categories image-->
+
+    <div class="container grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="relative">
+        <img src="img/top img/Image (4).svg" alt="" />
+        <span class="absolute bg-gray-400 bottom-0 w-full rounded-b-md">
+          <h1 class="text-white ml-2 mb-2">Wing Chair</h1>
+          <p class="text-sm ml-2 mb-2">3,584 Products</p>
+        </span>
+      </div>
+      <div class="relative">
+        <img src="img/top img/Image (5).svg" alt="" />
+        <span class="absolute bg-gray-400 bottom-0 w-full rounded-b-md">
+          <h1 class="text-white ml-2 mb-2">Wooden Chair</h1>
+          <p class="text-sm ml-2 mb-2">157 Products</p>
+        </span>
+      </div>
+      <div class="relative">
+        <img src="img/top img/Image (6).svg" alt="" />
+        <span class="absolute bg-gray-400 bottom-0 w-full rounded-b-md">
+          <h1 class="text-white ml-2 mb-2">Desk Chair</h1>
+          <p class="text-sm ml-2 mb-2">154 Products</p>
+        </span>
+      </div>
+    </div>
+    <!-- Our Product section -->
+    <!-- Our product titel -->
+    <div class="container my-20 text-center">
+      <h1 class="font-bold my-4 text-3xl text-[#272343]">Our Products</h1>
+      <p>
+        ALL <span class="text-slate-400">NEWEST</span> TRANDING
+        <span class="text-gray-400">BEST SELLERS FELTURED</span>
+      </p>
+    </div>
+    <!-- Our Product img -->
+    <div class="container grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- image 1 -->
+      <div class="">
+        <div class="relative">
+          <img src="img/featured/Image.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-green-600 px-2 rounded-md absolute top-3 left-3"
+            >New</a
+          >
+          <a href="#"
+            ><img
+              src="img/icon/Heart 1.png"
+              alt="wish"
+              class="absolute p-2 bg-white rounded-md top-3 right-12"
+          /></a>
+        </div>
+
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="text-[#007580]">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-3 bg-teal-700 text-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- Image 2 -->
+      <div>
+        <div class="relative">
+          <img src="img/featured/Image (1).svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-[#F5813F] px-2 rounded-md absolute top-3 right-12"
+            >Sales</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 3 -->
+      <div>
+        <img src="img/featured/Image (3).svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 4 -->
+      <div>
+        <img src="img/featured/Image (2).svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <div class="container grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- image 5 -->
+      <div>
+        <div class="relative">
+          <img src="img/featured/Image (9).svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-[#F5813F] px-2 rounded-md absolute top-3 left-3"
+            >Sales</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 6 -->
+      <div>
+        <div class="relative">
+          <img src="img/featured/Image (10).svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-green-600 px-2 rounded-md absolute top-3 right-12"
+            >New</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 7 -->
+      <div>
+        <div class="relative">
+          <img src="img/featured/Image (11).svg" alt="" class="" />
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 8 -->
+      <div>
+        <div class="relative">
+          <img src="img/featured/Image.svg" alt="" class="" />
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- About client -->
+    <div class="bg-gray-100 my-20">
+      <!-- About client title -->
+    <div class="container flex justify-between items-center ">
+      <h1 class="heading">What client says about us</h1>
+      <div class="flex gap-4">
+        <span
+          ><img
+            src="img/featured/Right 24px.svg"
+            alt=""
+            class="p-4 bg-teal-700 rounded-full"
+        /></span>
+        <span
+          ><img
+            src="img/featured/Right 24px (1).svg"
+            alt=""
+            class="p-4 rounded-full bg-slate-200"
+        /></span>
+      </div>
+    </div>
+    <!-- About client profile -->
+    <div class="">
+      <div class="flex flex-col md:container md:flex md:flex-row md:items-center md:justify-between">
+        <img src="img/top img/Testimonial Card.svg" alt="About client" />
+        <img src="img/top img/Testimonial Card (1).svg" alt="About client" />
+      </div>
+    </div>
+    </div>
+    <!-- Recently Added -->
+    <!-- Recently Added titel -->
+    <div class="container flex justify-between items-center">
+      <h1 class="heading">Recently Added</h1>
+      <div class="flex gap-4">
+        <span
+          ><img
+            src="img/featured/Right 24px.svg"
+            alt=""
+            class="p-4 bg-teal-700 rounded-full"
+        /></span>
+        <span
+          ><img
+            src="img/featured/Right 24px (1).svg"
+            alt=""
+            class="p-4 rounded-full bg-slate-200"
+        /></span>
+      </div>
+    </div>
+    <!-- Recently Added image -->
+    <div class="container grid grid-cols-1 md:grid-cols-4 gap-4">
+      <!-- image 1 -->
+      <div class="">
+        <div class="relative">
+          <img src="img/featured/Image.svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-green-600 px-2 rounded-md absolute top-3 left-3"
+            >New</a
+          >
+          <a href="#"
+            ><img
+              src="img/icon/Heart 1.png"
+              alt="wish"
+              class="absolute p-2 bg-white rounded-md top-3 right-12"
+          /></a>
+        </div>
+
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="text-[#007580]">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-3 bg-teal-700 text-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- Image 2 -->
+      <div>
+        <div class="relative">
+          <img src="img/featured/Image (1).svg" alt="" class="" />
+          <a
+            href="#"
+            class="text-white bg-[#F5813F] px-2 rounded-md absolute top-3 right-12"
+            >Sales</a
+          >
+        </div>
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 3 -->
+      <div>
+        <img src="img/featured/Image (3).svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+      <!-- image 4 -->
+      <div>
+        <img src="img/featured/Image (2).svg" alt="" />
+        <div class="flex items-center justify-between mt-2">
+          <span>
+            <h1 class="">Library Stool Chair</h1>
+            <p class="font-bold">$20</p>
+          </span>
+          <a href="#"
+            ><img
+              src="img/icon/Buy 2.png"
+              alt=""
+              class="p-4 bg-gray-100 decoration-white rounded-md"
+          /></a>
+        </div>
+      </div>
+    </div>
+    <!-- footer section -->
+     <div class="container grid grid-cols-1 md:grid-cols-4 gap-4 mt-16">
+      <!-- Frist columm -->
+      <div>
+        <div class="flex items-center space-x-2">
+          <img src="img/logo/Logo Icon (1).png" alt="" />
+          <a href="#" class="text-[26px] font-semibold text-gray-800">Comforty</a>
+        </div>
+        <p class="text-gray-400 my-5">Vivamus tristique odio sit amet velit semper, <br>eu posuere turpis interdum. <br>
+          Cras egestas purus </p>
+          <img src="img/icon/Social Links.svg" alt="">
+      </div>
+      <!-- Second columm -->
+       <div>
+        <h1 class="text-gray-400">Category</h1>
+        <a href="#">Sofa</a><br>
+        <a href="#">Armchair</a><br>
+        <a href="#">Wing Chair</a><br>
+        <a href="#">Desk Chair</a><br>
+        <a href="#">wooden Chair</a><br>
+        <a href="#">Park Bench</a>
+       </div>
+       <!-- thrad columm -->
+        <div>
+          <h1 class="text-gray-400">Support</h1>
+        <a href="#">Help & Support</a><br>
+        <a href="#">Tearms & Conditions</a><br>
+        <a href="#">Privacy Policy</a><br>
+        <a href="#">Help</a><br>
+        </div>
+        <!-- fourth columm -->
+        <div>
+          <h1 class="text-gray-400">Newsletter</h1>
+          <span class="flex space-x-2 my-2">
+            <input type="text" placeholder="Your email" class="w-full max-w-md py-2 px-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
+          <button class="p-2 text-white bg-teal-500 rounded-md">Subscribe</button>
+          </span>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tincidunt erat enim.</p>
+        </div>
+     </div>
+     <!-- end section -->
+      <div class="border p-4 mt-6">
+        <div class="container flex flex-col md:flex-row items-center justify-between">
+          <h1 class="text-gray-400">@ 2021 - Blogy - Designed & Develop by <span class="text-black">Zakirsoft</span></h1>
+          <img src="img/benefit/Group 13.svg" alt="Payment" class="opacity-50">
+     </div>
+      </div>
+  </body>
+</html>
